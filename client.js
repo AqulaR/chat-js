@@ -83,6 +83,7 @@ const addChatMessage = (data) => {
   removeChatTyping(data)
 
   const typingClass = data.typing ? 'typing' : ''
+  //const me = data.username == 
 
   const html = `
     <li

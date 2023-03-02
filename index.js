@@ -49,13 +49,15 @@ io.on('connection', (S) => {
 
   S.on('add user', (username) => {
     if (user) return
-
+    console.log(users);
     S.username = username
     ++users
     user = true
     S.emit('login', {
       users
     })
+
+    
 
     S.broadcast.emit('user joined', {
       username: S.username,
