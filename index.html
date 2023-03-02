@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chatWoGPT</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <ul class="pages">
+        <li class="chat_page">
+        <div class="chat_area">
+            <ul class="messages"></ul>
+        </div>
+        <input
+            type="text"
+            placeholder="Type here..."
+            class="message_input"
+        />
+        <div class="smiles">
+            <div class = 'smile' my-data-smile = '&#128512;'>&#128512;</div>
+            <div class = 'smile' my-data-smile = '&#128517;'>&#128517;</div>
+            <div class = 'smile' my-data-smile = '&#128554;'>&#128554;</div>
+            <div class = 'smile' my-data-smile = '&#129397;'>&#129397;</div>
+            <div class = 'smile' my-data-smile = '&#129315;'>&#129315;</div>
+            <div class = 'smile' my-data-smile = '&#128579;'>&#128579;</div>
+            <div class = 'smile' my-data-smile = '&#129313;'>&#129313;</div>
+
+        </div>
+        </li>
+        <li class="login_page">
+        <div class="form">
+            <h3 class="title">Username?</h3>
+            <input type="text" maxlength="20" class="username_input" />
+        </div>
+        </li>
+    </ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+    <script>
+         window.addEventListener('click', function(event){
+        if (event.target.classList.contains('smile'))
+        {
+          let edit = document.querySelector('.message_input');
+          edit.value += event.target.attributes['my-data-smile'].value;
+        }
+      });
+    </script>
+</body>
+</html>
